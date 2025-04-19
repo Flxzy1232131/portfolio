@@ -60,30 +60,41 @@
             border: none;
             display: block;
         }
+        .status {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .status-red {
+            color: #ff6b6b;
+        }
+        .status-green {
+            color: #51cf66;
+        }
     </style>
 </head>
 <body>
     <div class="tab-container">
         <div class="tabs">
-            <button class="tab-button active" onclick="openTab('scripting')">Scripting</button>
+            <button class="tab-button active" onclick="openTab('building')">Building</button>
             <button class="tab-button" onclick="openTab('animation')">Animation</button>
         </div>
 
-        <div id="scripting" class="tab-content active">
-            <h2>Scripting Projects</h2>
-            <p>Here you can showcase your scripting projects and experience.</p>
+        <div id="building" class="tab-content active">
+            <h2>Building Projects</h2>
+            <p>Here you can showcase your building projects and experience.</p>
+            <p class="status status-red">Commission Status: Not Available</p>
             <div class="video-container">
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/" title="Scripting Project 1" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/" title="Building Project 1" allowfullscreen></iframe>
                 </div>
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/" title="Scripting Project 2" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/" title="Building Project 2" allowfullscreen></iframe>
                 </div>
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/" title="Scripting Project 3" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/" title="Building Project 3" allowfullscreen></iframe>
                 </div>
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/" title="Scripting Project 4" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/" title="Building Project 4" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -91,6 +102,7 @@
         <div id="animation" class="tab-content">
             <h2>Animation Projects</h2>
             <p>Here you can showcase your animation projects and work.</p>
+            <p class="status status-green">Commission Status: Available</p>
             <div class="video-container">
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/vbQiaErhdzk" title="Animation Project 1" allowfullscreen></iframe>
