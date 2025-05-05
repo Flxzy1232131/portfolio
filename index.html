@@ -15,25 +15,27 @@
             position: relative;
             overflow: hidden;
         }
-        body::before {
-            content: '';
+        .rain {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                linear-gradient(to bottom, rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 0 L50 100 L100 0 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>'),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 100 L50 0 L100 100 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
-            background-size: cover, 50px 50px, 50px 50px;
-            animation: rain 1s linear infinite;
             pointer-events: none;
             z-index: -1;
         }
-        @keyframes rain {
-            0% { background-position: 0 0, 0 0, 0 0; }
-            100% { background-position: 0 50px, 25px 25px, -25px -25px; }
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 6px;
+            background-color: #4169E1;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
         }
         .tab-container {
             width: 100%;
@@ -103,6 +105,7 @@
     </style>
 </head>
 <body>
+    <div class="rain"></div>
     <div class="tab-container">
         <div class="tabs">
             <button class="tab-button active" onclick="openTab('animation')">Animation</button>
@@ -164,6 +167,19 @@
             // Show the selected tab content and activate the button
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
+        }
+
+        // Create rain effect
+        const rainContainer = document.querySelector('.rain');
+        const raindropsCount = 100;
+
+        for (let i = 0; i < raindropsCount; i++) {
+            const raindrop = document.createElement('div');
+            raindrop.classList.add('raindrop');
+            raindrop.style.left = `${Math.random() * 100}%`;
+            raindrop.style.animationDuration = `${Math.random() * 1 + 0.5}s`;
+            raindrop.style.animationDelay = `${Math.random() * 2}s`;
+            rainContainer.appendChild(raindrop);
         }
     </script>
 </body>
