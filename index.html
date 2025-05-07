@@ -77,7 +77,7 @@
             z-index: 3;
         }
         .video-item {
-            width: 32%;
+            width: 100%;
             margin-bottom: 20px;
             border: 1px solid #444;
             border-radius: 5px;
@@ -103,6 +103,16 @@
         }
         .status-green {
             color: #51cf66;
+        }
+        @media (min-width: 768px) {
+            .video-item {
+                width: 48%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .video-item {
+                width: 32%;
+            }
         }
     </style>
 </head>
@@ -183,6 +193,13 @@
             raindrop.style.animationDelay = `${Math.random() * 2}s`;
             rainContainer.appendChild(raindrop);
         }
+
+        // Make YouTube videos clickable on mobile
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+            iframe.setAttribute('loading', 'lazy');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        });
     </script>
 </body>
 </html>
