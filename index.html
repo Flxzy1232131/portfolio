@@ -165,24 +165,20 @@
 
     <script>
         function openTab(tabName) {
-            // Hide all tab content
             const tabContents = document.getElementsByClassName('tab-content');
             for (let content of tabContents) {
                 content.classList.remove('active');
             }
 
-            // Remove active class from all buttons
             const tabButtons = document.getElementsByClassName('tab-button');
             for (let button of tabButtons) {
                 button.classList.remove('active');
             }
 
-            // Show the selected tab content and activate the button
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
         }
 
-        // Create rain effect
         const rainContainer = document.querySelector('.rain');
         const raindropsCount = 100;
 
@@ -195,7 +191,6 @@
             rainContainer.appendChild(raindrop);
         }
 
-        // Make YouTube videos clickable on mobile
         const iframes = document.querySelectorAll('iframe');
         iframes.forEach(iframe => {
             iframe.setAttribute('loading', 'lazy');
