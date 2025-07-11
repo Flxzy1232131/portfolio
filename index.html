@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,12 +122,28 @@
     <div class="rain"></div>
     <div class="tab-container">
         <div class="tabs">
-            <button class="tab-button active" onclick="openTab('animation')">Animation</button>
+            <button class="tab-button active" onclick="openTab('new-animations')">New Animations</button>
+            <button class="tab-button" onclick="openTab('old-animations')">Old Animations</button>
         </div>
 
-        <div id="animation" class="tab-content active">
-            <h2>Animation Projects</h2>
-            <p>Here I showcase my animation projects and work.</p>
+        <div id="new-animations" class="tab-content active">
+            <h2>New Animation Projects</h2>
+            <p>Here I showcase my latest animation projects and work.</p>
+            <p class="status status-green">Commission Status: Available</p>
+            <div class="video-container">
+                <!-- Add new animation videos here -->
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/NJn7aRiEMTk" title="New Animation Project 1" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Example placeholder, add more as needed -->
+            </div>
+        </div>
+
+        <div id="old-animations" class="tab-content">
+            <h2>Old Animation Projects</h2>
+            <p>Here I showcase my previous animation projects and work.</p>
             <p class="status status-green">Commission Status: Available</p>
             <div class="video-container">
                 <div class="video-item">
@@ -168,7 +185,7 @@
                     <div class="video-wrapper">
                         <iframe src="https://streamable.com/e/px5y0j" title="Animation Project 8" allowfullscreen></iframe>
                     </div>
-             </div>  
+                </div>  
                 <div class="video-item">
                     <div class="video-wrapper">
                         <iframe src="https://streamable.com/e/wou54e" title="Animation Project 9" allowfullscreen></iframe>
@@ -177,6 +194,8 @@
             </div>
         </div>
     </div>
+
+    
 
     <script>
         function openTab(tabName) {
