@@ -122,8 +122,8 @@
     <div class="rain"></div>
     <div class="tab-container">
         <div class="tabs">
-            <button class="tab-button active" onclick="openTab('new-animations')">New Animations</button>
-            <button class="tab-button" onclick="openTab('old-animations')">Old Animations</button>
+            <button class="tab-button active" onclick="openTab(event, 'new-animations')">New Animations</button>
+            <button class="tab-button" onclick="openTab(event, 'old-animations')">Old Animations</button>
         </div>
 
         <div id="new-animations" class="tab-content active">
@@ -150,8 +150,22 @@
             <p>Here I showcase my previous animation projects and work.</p>
             <p class="status status-green">Commission Status: Available</p>
             <div class="video-container">
-                <!-- No old animation videos to display -->
-                <p style="width:100%;text-align:center;color:#aaa;font-style:italic;">No old animation projects to display at this time.</p>
+                <!-- Old animation videos here -->
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/1XQ7pQqQK7w" title="Old Animation Project 1" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Old Animation Project 2" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Old Animation Project 3" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -159,7 +173,7 @@
     
 
     <script>
-        function openTab(tabName) {
+        function openTab(event, tabName) {
             const tabContents = document.getElementsByClassName('tab-content');
             for (let content of tabContents) {
                 content.classList.remove('active');
